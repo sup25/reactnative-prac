@@ -21,7 +21,7 @@ export default function App() {
       <Text numberOfLines={1} onPress={handlePress}>
         Hi React Native.
       </Text>
-      {/* <TouchableWithoutFeedback onPress={() => console.log("image tapped")}>
+      <TouchableWithoutFeedback onPress={() => console.log("image tapped")}>
         <Image
           source={{
             width: 200,
@@ -29,7 +29,7 @@ export default function App() {
             uri: "https://picsum.photos/200/300",
           }}
         />
-      </TouchableWithoutFeedback> */}
+      </TouchableWithoutFeedback>
 
       <Button
         title="click Me"
