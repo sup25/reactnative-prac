@@ -1,40 +1,10 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  TouchableWithoutFeedback,
-  SafeAreaView, //only works for ios
-  Image,
-  Button,
-  Alert,
-  Platform,
-  StatusBar,
-  Dimensions,
-} from "react-native";
-import {
-  useDimensions,
-  useDeviceOrientation,
-} from "@react-native-community/hooks";
+import { View } from "react-native";
+import WelcomeScreen from "./app/screens/WelcomeScreen";
+import ViewImageScreen from "./app/screens/ViewImageScreen";
+import Card from "./app/component/Card";
+import ListingDetailsScreen from "./app/screens/ListingDetailsScreen";
+import MessageScreen from "./app/screens/MessageScreen";
 
 export default function App() {
-  const { landscape } = useDeviceOrientation();
-
-  return (
-    <SafeAreaView style={styles.container}>
-      <View
-        style={{
-          backgroundColor: "black",
-          width: "100%",
-          height: landscape ? "100%" : "30%",
-        }}
-      ></View>
-    </SafeAreaView>
-  );
+  return <MessageScreen />;
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-  },
-});
