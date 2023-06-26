@@ -9,48 +9,32 @@ import {
   Alert,
   Platform,
   StatusBar,
+  Dimensions,
 } from "react-native";
+import {
+  useDimensions,
+  useDeviceOrientation,
+} from "@react-native-community/hooks";
 
 export default function App() {
-  const handlePress = () => {
-    console.log("Text pressed");
-  };
+  const { landscape } = useDeviceOrientation();
 
   return (
-    <View style={styles.container}>
-      <Text numberOfLines={1} onPress={handlePress}>
-        Hi React Native.
-      </Text>
-      {/* <TouchableWithoutFeedback onPress={() => console.log("image tapped")}>
-        <Image
-          source={{
-            width: 200,
-            height: 300,
-            uri: "https://picsum.photos/200/300",
-          }}
-        />
-      </TouchableWithoutFeedback> */}
-
-      <Button
-        title="click Me"
-        onPress={
-          () =>
-            Alert.alert("my title", "My message", [
-              { text: "Yes", onPress: () => console.log("Yes") },
-              { text: "No", onPress: () => console.log("No") },
-            ])
-          //only works on ios
-          /*    Alert.prompt("My title", "My message", (text) => console.log(text)) */
-        }
-      />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <View
+        style={{
+          backgroundColor: "black",
+          width: "100%",
+          height: landscape ? "100%" : "30%",
+        }}
+      ></View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "teal",
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
 });

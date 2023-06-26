@@ -3,7 +3,7 @@
     "name": "Do",
     "slug": "Do",
     "version": "1.0.0",
-    "orientation": "portrait",
+    "orientation": "potrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {

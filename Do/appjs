@@ -10,12 +10,16 @@ import {
   Platform,
   StatusBar,
 } from "react-native";
+import {
+  useDimensions,
+  useDeviceOrientation,
+} from "@react-native-community/hooks";
 
 export default function App() {
   const handlePress = () => {
     console.log("Text pressed");
   };
-
+  const { landscape } = useDeviceOrientation();
   return (
     <View style={styles.container}>
       <Text numberOfLines={1} onPress={handlePress}>
@@ -30,7 +34,13 @@ export default function App() {
           }}
         />
       </TouchableWithoutFeedback>
-
+      <View
+        style={{
+          backgroundColor: "black",
+          width: "100%",
+          height: landscape ? "100%" : "30%",
+        }}
+      ></View>
       <Button
         title="click Me"
         onPress={
