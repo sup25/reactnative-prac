@@ -11,6 +11,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "permissions": [
+      "LOCATION"
+    ],
     "assetBundlePatterns": [
       "**/*"
     ],
@@ -24,6 +27,7 @@
         "backgroundColor": "#ffffff"
       }
     },
+    
     "web": {
       "favicon": "./app/assets/favicon.png"
     }
