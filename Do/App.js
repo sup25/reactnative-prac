@@ -24,12 +24,17 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import AuthNavigator from "./app/navigation/AuthNavigator";
 import NavigationTheme from "./app/navigation/NavigationTheme";
 import AppNavigator from "./app/navigation/AppNavigator";
+import NetInfo, { useNetInfo } from "@react-native-community/netinfo";
+import OfflineNotice from "./app/component/OfflineNotice";
 
 export default function App() {
   return (
-    <NavigationContainer theme={NavigationTheme}>
-      <AppNavigator />
-    </NavigationContainer>
+    <>
+      <NavigationContainer theme={NavigationTheme}>
+        <OfflineNotice />
+        <AppNavigator />
+      </NavigationContainer>
+    </>
   );
 }
 
